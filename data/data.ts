@@ -1,0 +1,626 @@
+// data/data.ts
+import { Hotel, Destination, PropertyType } from "./types";
+
+export const destinations: Destination[] = [
+  { id: "1", city: "New Delhi", country: "India", image: "/images/delhi.jpg", propertiesCount: 1245 },
+  { id: "2", city: "Mumbai", country: "India", image: "/images/mumbai.jpg", propertiesCount: 982 },
+  { id: "3", city: "Bangalore", country: "India", image: "/images/bangalore.jpg", propertiesCount: 876 },
+  { id: "4", city: "Goa", country: "India", image: "/images/goa.jpg", propertiesCount: 754 },
+  { id: "5", city: "Jaipur", country: "India", image: "/images/jaipur.jpg", propertiesCount: 632 },
+  { id: "6", city: "Chennai", country: "India", image: "/images/chennai.jpg", propertiesCount: 543 },
+  { id: "7", city: "Hyderabad", country: "India", image: "/images/hyderabad.jpg", propertiesCount: 498 },
+  { id: "8", city: "Kolkata", country: "India", image: "/images/kolkata.jpg", propertiesCount: 421 },
+];
+
+export const propertyTypes: PropertyType[] = [
+  { id: "1", type: "Hotels", image: "/images/hotels.jpg", description: "Comfortable rooms with various amenities" },
+  { id: "2", type: "Apartments", image: "/images/apartments.jpg", description: "Entire places with kitchen facilities" },
+  { id: "3", type: "Resorts", image: "/images/resorts.jpg", description: "Luxury properties with extensive facilities" },
+  { id: "4", type: "Villas", image: "/images/villas.jpg", description: "Private homes with premium features" },
+  { id: "5", type: "Cabins", image: "/images/cabins.jpg", description: "Cozy accommodations in nature" },
+  { id: "6", type: "Homestays", image: "/images/homestays.jpg", description: "Local living experiences" },
+  { id: "7", type: "Boutique", image: "/images/boutique.jpg", description: "Unique, stylish accommodations" },
+];
+
+export const hotels: Hotel[] = [
+  {
+    id: "1",
+    name: "Grand Hyatt Mumbai",
+    description: "Luxury 5-star hotel with panoramic city views and world-class amenities in the heart of Mumbai.",
+    price: 12000,
+    rating: 4.8,
+    stars: 5,
+    amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "Restaurant", "Bar", "Airport Shuttle"],
+    // Only one image path
+    images: ["/images/image1.jpg"], // Assuming /public/images/image1.jpg
+    location: {
+      city: "Mumbai",
+      country: "India",
+      address: "Off Western Express Highway, Santacruz East, Mumbai 400055",
+      coordinates: [19.0760, 72.8777],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Rahul Sharma",
+        rating: 5,
+        date: "2025-03-15",
+        title: "Excellent stay!",
+        comment: "The service was impeccable and the rooms were spacious and clean.",
+      },
+      {
+        id: "2",
+        user: "Priya Patel",
+        rating: 4,
+        date: "2025-02-28",
+        title: "Great location",
+        comment: "Perfect location with amazing views. The breakfast could be better though.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Deluxe Room",
+        price: 12000,
+        size: 45,
+        capacity: 2,
+        beds: "1 King Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk"],
+        // Only one image path for room
+        images: ["/images/deluxe-1.jpg"], // Changed to a specific room image name
+        available: 5,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 11500, available: 2 },
+          { date: "2025-06-02", price: 12000, available: 3 },
+          { date: "2025-06-03", price: 12500, available: 1 },
+        ],
+      },
+      {
+        id: "2",
+        type: "Executive Suite",
+        price: 18000,
+        size: 75,
+        capacity: 3,
+        beds: "1 King Bed + 1 Sofa Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Separate Living Area"],
+        // Only one image path for room
+        images: ["/images/suite-1.jpg"], // Changed to a specific room image name
+        available: 2,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 17800, available: 1 },
+          { date: "2025-06-02", price: 18500, available: 2 },
+          { date: "2025-06-03", price: 18200, available: 0 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "3:00 PM",
+      checkOut: "12:00 PM",
+      cancellation: "Free cancellation up to 48 hours before check-in",
+      pets: false,
+    },
+  },
+  {
+    id: "2",
+    name: "Taj Palace New Delhi",
+    description: "Iconic luxury hotel featuring lush gardens, multiple dining options, and a full-service spa.",
+    price: 15000,
+    rating: 4.9,
+    stars: 5,
+    amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "4 Restaurants", "Bar", "Concierge Service"],
+    // Only one image path
+    images: ["/images/image2.jpg"], // Assuming /public/images/image2.jpg
+    location: {
+      city: "New Delhi",
+      country: "India",
+      address: "2 Sardar Patel Marg, Diplomatic Enclave, New Delhi 110021",
+      coordinates: [28.6139, 77.2090],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Amit Singh",
+        rating: 5,
+        date: "2025-04-10",
+        title: "Royal experience",
+        comment: "Felt like royalty during our entire stay. The staff went above and beyond.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Luxury Room",
+        price: 15000,
+        size: 50,
+        capacity: 2,
+        beds: "1 King Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Bathrobe"],
+        // Only one image path for room
+        images: ["/images/luxury-1.jpg"], // Changed to a specific room image name
+        available: 7,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 14500, available: 3 },
+          { date: "2025-06-02", price: 15000, available: 4 },
+          { date: "2025-06-03", price: 15500, available: 2 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "2:00 PM",
+      checkOut: "11:00 AM",
+      cancellation: "Free cancellation up to 72 hours before check-in",
+      pets: true,
+    },
+  },
+  {
+    id: "3",
+    name: "The Leela Palace Bangalore",
+    description: "A luxurious palace hotel offering opulent rooms, award-winning dining, and a serene ambiance in Bangalore.",
+    price: 10000,
+    rating: 4.7,
+    stars: 5,
+    amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "3 Restaurants", "Bar", "Valet Parking"],
+    // Only one image path
+    images: ["/images/image3.jpg"], // Assuming /public/images/image3.jpg
+    location: {
+      city: "Bangalore",
+      country: "India",
+      address: "23, Old Airport Rd, Bengaluru, Karnataka 560008",
+      coordinates: [12.9716, 77.5946],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Deepak Kumar",
+        rating: 5,
+        date: "2025-03-20",
+        title: "Magnificent stay",
+        comment: "Every aspect of the stay was perfect, from the service to the beautiful surroundings.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Premier Room",
+        price: 10000,
+        size: 48,
+        capacity: 2,
+        beds: "1 King Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Luxury Toiletries"],
+        // Only one image path for room
+        images: ["/images/premier-1.jpg"], // Changed to a specific room image name
+        available: 6,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 9800, available: 4 },
+          { date: "2025-06-02", price: 10200, available: 3 },
+          { date: "2025-06-03", price: 10500, available: 2 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "3:00 PM",
+      checkOut: "12:00 PM",
+      cancellation: "Free cancellation up to 48 hours before check-in",
+      pets: false,
+    },
+  },
+  {
+    id: "4",
+    name: "W Goa",
+    description: "Trendy beach resort offering vibrant accommodations, eclectic dining, and direct access to Vagator Beach.",
+    price: 18000,
+    rating: 4.6,
+    stars: 5,
+    amenities: ["Free WiFi", "Outdoor Pool", "Spa", "Fitness Center", "Nightclub", "Beach Access", "Yoga Classes"],
+    // Only one image path
+    images: ["/images/image4.jpg"], // Assuming /public/images/image4.jpg
+    location: {
+      city: "Goa",
+      country: "India",
+      address: "Vagator Beach, Bardez, Goa 403509",
+      coordinates: [15.6025, 73.7431],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Rohan Mehta",
+        rating: 4,
+        date: "2025-05-01",
+        title: "Fantastic vibe",
+        comment: "Loved the energy and the beach access. A great place to relax and party.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Wonderful Room",
+        price: 18000,
+        size: 55,
+        capacity: 2,
+        beds: "1 King Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Balcony"],
+        // Only one image path for room
+        images: ["/images/wonderful-1.jpg"], // Changed to a specific room image name
+        available: 4,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 17500, available: 2 },
+          { date: "2025-06-02", price: 18000, available: 3 },
+          { date: "2025-06-03", price: 19000, available: 1 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "3:00 PM",
+      checkOut: "12:00 PM",
+      cancellation: "Free cancellation up to 72 hours before check-in",
+      pets: false,
+    },
+  },
+  {
+    id: "5",
+    name: "The Oberoi Rajvilas Jaipur",
+    description: "A luxury resort in Jaipur, spread over 32 acres of gardens, offering unique villas and tents.",
+    price: 25000,
+    rating: 4.9,
+    stars: 5,
+    amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "Dining", "Private Gardens", "Camel Rides"],
+    // Only one image path
+    images: ["/images/image5.jpg"], // Assuming /public/images/image5.jpg
+    location: {
+      city: "Jaipur",
+      country: "India",
+      address: "Goner Rd, Jagatpura, Jaipur, Rajasthan 302031",
+      coordinates: [26.8200, 75.8751],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Sneha Sharma",
+        rating: 5,
+        date: "2025-04-25",
+        title: "Unforgettable experience",
+        comment: "A truly magnificent stay. The villas are stunning and the service is exceptional.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Luxury Tent",
+        price: 25000,
+        size: 70,
+        capacity: 2,
+        beds: "1 King Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Private Patio"],
+        // Only one image path for room
+        images: ["/images/tent-1.jpg"], // Changed to a specific room image name
+        available: 3,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 24500, available: 1 },
+          { date: "2025-06-02", price: 25000, available: 2 },
+          { date: "2025-06-03", price: 26000, available: 0 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "2:00 PM",
+      checkOut: "12:00 PM",
+      cancellation: "Free cancellation up to 96 hours before check-in",
+      pets: false,
+    },
+  },
+  {
+    id: "6",
+    name: "ITC Grand Chola Chennai",
+    description: "A magnificent luxury hotel inspired by South Indian architecture, offering royal treatment and world-class amenities.",
+    price: 11000,
+    rating: 4.7,
+    stars: 5,
+    amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "5 Restaurants", "Bar", "Business Center"],
+    // Only one image path
+    images: ["/images/image6.jpg"], // Assuming /public/images/image6.jpg
+    location: {
+      city: "Chennai",
+      country: "India",
+      address: "63, Mount Road, Guindy, Chennai, Tamil Nadu 600032",
+      coordinates: [13.0104, 80.2145],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Vikram Sundar",
+        rating: 5,
+        date: "2025-04-18",
+        title: "Grand indeed!",
+        comment: "The architecture is breathtaking and the service is top-notch. Will definitely return.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Executive Club Room",
+        price: 11000,
+        size: 52,
+        capacity: 2,
+        beds: "1 King Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Club Lounge Access"],
+        // Only one image path for room
+        images: ["/images/executive-1.jpg"], // Changed to a specific room image name
+        available: 5,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 10800, available: 3 },
+          { date: "2025-06-02", price: 11200, available: 2 },
+          { date: "2025-06-03", price: 11500, available: 1 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "2:00 PM",
+      checkOut: "12:00 PM",
+      cancellation: "Free cancellation up to 48 hours before check-in",
+      pets: true,
+    },
+  },
+  {
+    id: "7",
+    name: "Taj Falaknuma Palace Hyderabad",
+    description: "A former royal palace offering unparalleled luxury, exquisite dining, and breathtaking views of Hyderabad.",
+    price: 35000,
+    rating: 4.9,
+    stars: 5,
+    amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "Fine Dining", "Library", "Horse Carriage Rides"],
+    // Only one image path
+    images: ["/images/image7.jpg"], // Assuming /public/images/image7.jpg
+    location: {
+      city: "Hyderabad",
+      country: "India",
+      address: "Engine Bowli, Falaknuma, Hyderabad, Telangana 500053",
+      coordinates: [17.3316, 78.4672],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Arjun Reddy",
+        rating: 5,
+        date: "2025-05-10",
+        title: "Like a Maharaja!",
+        comment: "The palace is stunning and the service makes you feel like royalty. Worth every penny.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Grand Royal Suite",
+        price: 35000,
+        size: 120,
+        capacity: 3,
+        beds: "1 King Bed + 1 Single Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Study", "Marble Bathroom", "Butler Service"],
+        // Only one image path for room
+        images: ["/images/royal-1.jpg"], // Changed to a specific room image name
+        available: 2,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 34000, available: 1 },
+          { date: "2025-06-02", price: 35000, available: 1 },
+          { date: "2025-06-03", price: 36000, available: 0 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "2:00 PM",
+      checkOut: "12:00 PM",
+      cancellation: "Free cancellation up to 7 days before check-in",
+      pets: false,
+    },
+  },
+  {
+    id: "8",
+    name: "The Oberoi Grand Kolkata",
+    description: "A heritage hotel blending colonial charm with modern luxury in the heart of Kolkata.",
+    price: 9500,
+    rating: 4.6,
+    stars: 5,
+    amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "3 Restaurants", "Bar", "Concierge"],
+    // Only one image path
+    images: ["/images/image8.jpg"], // Assuming /public/images/image8.jpg
+    location: {
+      city: "Kolkata",
+      country: "India",
+      address: "15, Jawaharlal Nehru Rd, Kolkata, West Bengal 700013",
+      coordinates: [22.5726, 88.3639],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Ananya Chatterjee",
+        rating: 5,
+        date: "2025-03-28",
+        title: "Elegant and sophisticated",
+        comment: "The perfect blend of old-world charm and modern comfort. The staff were exceptionally attentive.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Deluxe Room",
+        price: 9500,
+        size: 42,
+        capacity: 2,
+        beds: "1 King Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Tea/Coffee Maker"],
+        // Only one image path for room
+        images: ["/images/deluxekol-1.jpg"], // Changed to a specific room image name
+        available: 6,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 9200, available: 4 },
+          { date: "2025-06-02", price: 9500, available: 3 },
+          { date: "2025-06-03", price: 9800, available: 2 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "2:00 PM",
+      checkOut: "12:00 PM",
+      cancellation: "Free cancellation up to 72 hours before check-in",
+      pets: true,
+    },
+  },
+  {
+    id: "9",
+    name: "Taj Lake Palace Udaipur",
+    description: "A romantic floating palace on Lake Pichola offering breathtaking views and royal treatment.",
+    price: 30000,
+    rating: 4.9,
+    stars: 5,
+    amenities: ["Free WiFi", "Swimming Pool", "Spa", "Boat Transfer", "Fine Dining", "Cultural Performances"],
+    // Only one image path
+    images: ["/images/image9.jpg"], // Assuming /public/images/image9.jpg
+    location: {
+      city: "Udaipur",
+      country: "India",
+      address: "Pichola, Udaipur, Rajasthan 313001",
+      coordinates: [24.5760, 73.6805],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Rajeshwari Singh",
+        rating: 5,
+        date: "2025-05-15",
+        title: "Magical experience",
+        comment: "Staying on the lake was absolutely magical. The sunset views are unforgettable.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Lake View Room",
+        price: 30000,
+        size: 65,
+        capacity: 2,
+        beds: "1 King Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Marble Bathroom"],
+        // Only one image path for room
+        images: ["/images/lakeview-1.jpg"], // Changed to a specific room image name
+        available: 4,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 29000, available: 2 },
+          { date: "2025-06-02", price: 30000, available: 1 },
+          { date: "2025-06-03", price: 31000, available: 1 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "2:00 PM",
+      checkOut: "12:00 PM",
+      cancellation: "Free cancellation up to 7 days before check-in",
+      pets: false,
+    },
+  },
+  {
+    id: "10",
+    name: "The Leela Kovalam Beach Kerala",
+    description: "A cliff-top luxury resort offering stunning views of the Arabian Sea and private beach access.",
+    price: 22000,
+    rating: 4.8,
+    stars: 5,
+    amenities: ["Free WiFi", "Infinity Pool", "Spa", "Private Beach", "3 Restaurants", "Ayurvedic Center"],
+    // Only one image path
+    images: ["/images/image10.jpg"], // Assuming /public/images/image10.jpg
+    location: {
+      city: "Kovalam",
+      country: "India",
+      address: "Beach Rd, Kovalam, Kerala 695527",
+      coordinates: [8.3935, 76.9785],
+    },
+    reviews: [
+      {
+        id: "1",
+        user: "Meera Nair",
+        rating: 5,
+        date: "2025-04-30",
+        title: "Paradise found",
+        comment: "The views are spectacular and the private beach is heavenly. Perfect for a relaxing getaway.",
+      },
+    ],
+    rooms: [
+      {
+        id: "1",
+        type: "Sea View Room",
+        price: 22000,
+        size: 58,
+        capacity: 2,
+        beds: "1 King Bed",
+        amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Balcony", "Ocean View"],
+        // Only one image path for room
+        images: ["/images/seaview-1.jpg"], // Changed to a specific room image name
+        available: 5,
+        dailyAvailability: [
+          { date: "2025-06-01", price: 21000, available: 3 },
+          { date: "2025-06-02", price: 22000, available: 2 },
+          { date: "2025-06-03", price: 23000, available: 1 },
+        ],
+      },
+    ],
+    policies: {
+      checkIn: "3:00 PM",
+      checkOut: "12:00 PM",
+      cancellation: "Free cancellation up to 5 days before check-in",
+      pets: false,
+    },
+  },
+];
+
+export const amenitiesList = [
+  "Free WiFi",
+  "Swimming Pool",
+  "Parking",
+  "Airport Shuttle",
+  "Family Rooms",
+  "Spa",
+  "Fitness Center",
+  "Restaurant",
+  "Bar",
+  "Room Service",
+  "Non-smoking Rooms",
+  "Pet Friendly",
+  "Business Center",
+  "Laundry Service",
+  "24-hour Front Desk",
+  "Concierge",
+  "Garden",
+  "Terrace",
+  "Lounge",
+  "Valet Parking",
+];
+
+export const roomTypes = [
+  "Single Room",
+  "Double Room",
+  "Deluxe Room",
+  "Suite",
+  "Executive Suite",
+  "Presidential Suite",
+  "Family Room",
+  "Studio",
+  "Apartment",
+  "Villa",
+  "Bungalow",
+  "Tent",
+  "Cottage",
+  "Chalet",
+];
+
+export const popularSearches = [
+  { city: "New Delhi", country: "India" },
+  { city: "Mumbai", country: "India" },
+  { city: "Bangalore", country: "India" },
+  { city: "Goa", country: "India" },
+  { city: "Jaipur", country: "India" },
+  { city: "Chennai", country: "India" },
+  { city: "Hyderabad", country: "India" },
+  { city: "Kolkata", country: "India" },
+  { city: "Udaipur", country: "India" },
+  { city: "Kovalam", country: "India" },
+  { city: "Shimla", country: "India" },
+  { city: "Agra", country: "India" },
+];
