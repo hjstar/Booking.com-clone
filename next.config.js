@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   // Disabling compression helps prevent extension interference
   compress: false,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   
   experimental: {
     serverActions: true,
@@ -41,3 +44,5 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+

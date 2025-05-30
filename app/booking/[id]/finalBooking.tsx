@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Hotel, Room } from '@/types'; // Assuming your types are defined in a types file
+import { Hotel, Room } from '@/data/types'; // Assuming your types are defined in a types file
 
 interface FinalBookingProps {
   hotel: Hotel;

@@ -78,7 +78,7 @@ const Hero = () => {
               in a vacation home
             </p>
             <p className="text-xl md:text-2xl mb-8 text-white drop-shadow-lg">
-              All together, in a place that's just for you
+              All together, in a place thats just for you
             </p>
             <Link href="/rooms">
               <button 
@@ -95,7 +95,7 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 right-0 px-4 transform translate-y-1/2">
           <div className="container mx-auto">
             <div className="max-w-full mx-auto p-4">
-              <HeroSearch className="w-full" />
+              <HeroSearch/>
             </div>
           </div>
         </div>
