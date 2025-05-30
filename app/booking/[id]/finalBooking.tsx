@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import { Hotel, Room } from '@/data/types'; // Assuming your types are defined in a types file
 
@@ -26,9 +26,9 @@ const FinalBooking: React.FC<FinalBookingProps> = ({ hotel, selectedDates }) => 
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-0 border border-blue-200 rounded-lg overflow-hidden mb-6">
+    <div className="flex flex-col lg:flex-row flex-wrap gap-4 border border-blue-200 rounded-lg overflow-hidden mb-6 p-4 sm:p-6">
       {/* Room Type Selection */}
-      <div className="flex-1 p-4 border-b lg:border-b-0 lg:border-r border-blue-200">
+      <div className="flex-1 min-w-[280px] p-4 border border-blue-200 rounded-lg">
         <div className="bg-blue-600 text-white p-2.5 mb-2.5 rounded text-center">
           Room Type
         </div>
@@ -48,7 +48,7 @@ const FinalBooking: React.FC<FinalBookingProps> = ({ hotel, selectedDates }) => 
       </div>
 
       {/* Number of Guests */}
-      <div className="flex-1 p-4 border-b lg:border-b-0 lg:border-r border-blue-200">
+      <div className="flex-1 min-w-[280px] p-4 border border-blue-200 rounded-lg">
         <div className="bg-blue-600 text-white p-2.5 mb-2.5 rounded text-center">
           Number of Guests
         </div>
@@ -66,7 +66,7 @@ const FinalBooking: React.FC<FinalBookingProps> = ({ hotel, selectedDates }) => 
       </div>
 
       {/* Price Information */}
-      <div className="flex-1 p-4 border-b lg:border-b-0 lg:border-r border-blue-200">
+      <div className="flex-1 min-w-[280px] p-4 border border-blue-200 rounded-lg">
         <div className="bg-blue-600 text-white p-2.5 mb-2.5 rounded text-center">
           Price Details
         </div>
@@ -93,7 +93,7 @@ const FinalBooking: React.FC<FinalBookingProps> = ({ hotel, selectedDates }) => 
       </div>
 
       {/* Your Choices Summary */}
-      <div className="flex-1 p-4 border-b lg:border-b-0 lg:border-r border-blue-200">
+      <div className="flex-1 min-w-[280px] p-4 border border-blue-200 rounded-lg">
         <div className="bg-blue-600 text-white p-2.5 mb-2.5 rounded text-center">
           Your Choices
         </div>
@@ -116,7 +116,7 @@ const FinalBooking: React.FC<FinalBookingProps> = ({ hotel, selectedDates }) => 
       </div>
 
       {/* Booking Action */}
-      <div className="flex-1 p-4">
+      <div className="flex-1 min-w-[280px] p-4 border border-blue-200 rounded-lg">
         <div className="bg-blue-600 text-white p-2.5 mb-2.5 rounded text-center">
           Complete Booking
         </div>

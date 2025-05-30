@@ -24,7 +24,7 @@ const RoomCard = ({ hotel, className = '' }: Props) => {
       setSelectedHotel(hotel);
       setBookingDates({
         startDate: new Date(),
-        endDate: addDays(new Date(), 3)
+        endDate: addDays(new Date(), 3),
       });
       router.push(`/booking/${hotel.id}`);
       setIsModalOpen(false);
@@ -37,32 +37,32 @@ const RoomCard = ({ hotel, className = '' }: Props) => {
     <>
       <div
         onClick={() => setIsModalOpen(true)}
-        className={`relative h-[380px] min-w-[280px] flex-shrink-0 border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer ${className}`}
+        className={`relative h-[380px] w-full sm:min-w-[280px] sm:w-auto flex-shrink-0 border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer ${className}`}
         aria-label={`View details for ${hotel.name}`}
       >
-        <div className="relative w-full h-[200px]">
+        <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px]">
           <Image
             src={imageUrl}
             alt={`${hotel.name} featured image`}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 280px"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 280px"
             priority
           />
         </div>
 
-        <div className='p-4'>
-          <h1 className='text-lg font-bold truncate'>{hotel.name}</h1>
-          <p className='text-sm text-gray-600 truncate'>
+        <div className="p-4">
+          <h1 className="text-lg font-bold truncate">{hotel.name}</h1>
+          <p className="text-sm text-gray-600 truncate">
             {hotel.location.city}, {hotel.location.country}
           </p>
 
-          <div className='flex items-center justify-between mt-2'>
-            <div className='flex items-center'>
-              <span className='text-white font-semibold bg-blue-500 text-base mr-1'>
+          <div className="flex items-center justify-between mt-2">
+            <div className="flex items-center">
+              <span className="text-white font-semibold bg-blue-500 text-base mr-1">
                 {hotel.rating.toFixed(1)} ★
               </span>
-              <span className='text-xs text-gray-500'>({hotel.stars} stars)</span>
+              <span className="text-xs text-gray-500">({hotel.stars} stars)</span>
             </div>
           </div>
 
@@ -86,11 +86,11 @@ const RoomCard = ({ hotel, className = '' }: Props) => {
           aria-modal="true"
         >
           <div
-            className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="relative h-64 md:h-full">
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="relative w-full h-64 md:h-auto md:w-1/2">
                 <Image
                   src={imageUrl}
                   alt={hotel.name}
@@ -100,7 +100,7 @@ const RoomCard = ({ hotel, className = '' }: Props) => {
                 />
               </div>
 
-              <div className="p-6">
+              <div className="p-6 w-full md:w-1/2 flex flex-col">
                 <div className="flex justify-between items-start">
                   <div>
                     <h1 className="text-xl font-bold">{hotel.name}</h1>
@@ -113,20 +113,28 @@ const RoomCard = ({ hotel, className = '' }: Props) => {
                     className="text-gray-500 hover:text-gray-700 focus:outline-none p-1 rounded-full hover:bg-gray-100"
                     aria-label="Close modal"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
                 </div>
 
-                <p className="mt-3 text-gray-700 text-sm leading-relaxed">{hotel.description}</p>
+                <p className="mt-3 text-gray-700 text-sm leading-relaxed flex-grow">
+                  {hotel.description}
+                </p>
 
                 <div className="mt-4">
                   <h3 className="font-semibold text-base mb-2">Amenities</h3>
                   <div className="flex flex-wrap gap-2 mt-1">
                     {hotel.amenities.map((amenity, index) => (
-                      <span 
-                        key={index} 
+                      <span
+                        key={index}
                         className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium"
                       >
                         {amenity}
@@ -145,8 +153,8 @@ const RoomCard = ({ hotel, className = '' }: Props) => {
                   </div>
                 </div>
 
-                <div className="mt-6 flex justify-between items-center border-t pt-4">
-                  <div>
+                <div className="mt-6 flex flex-col sm:flex-row justify-between items-center border-t pt-4 gap-3 sm:gap-0">
+                  <div className="text-center sm:text-left">
                     <p className="text-xs text-gray-500">Starting from</p>
                     <p className="text-xl font-bold text-black">${hotel.price.toLocaleString()}</p>
                     <p className="text-xs text-gray-500">per night</p>

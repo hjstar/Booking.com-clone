@@ -1,78 +1,158 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+
+type FooterLink = {
+  text: string;
+  href: string;
+};
+
+type FooterSection = {
+  id: string;
+  title: string;
+  links: FooterLink[];
+};
 
 const Footer = () => {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  const toggleSection = (section: string) => {
+    setOpenSection(openSection === section ? null : section);
+  };
+
+  const sections: FooterSection[] = [
+    {
+      id: 'support',
+      title: 'Support',
+      links: [
+        { text: 'Coronavirus (COVID-19) FAQs', href: '#' },
+        { text: 'Manage your trips', href: '#' },
+        { text: 'Contact Customer Service', href: '#' },
+        { text: 'Safety Resource Center', href: '#' },
+      ],
+    },
+    {
+      id: 'discover',
+      title: 'Discover',
+      links: [
+        { text: 'Genius loyalty program', href: '#' },
+        { text: 'Seasonal and holiday deals', href: '#' },
+        { text: 'Travel articles', href: '#' },
+        { text: 'Booking.com for Business', href: '#' },
+        { text: 'Traveller Review Awards', href: '#' },
+        { text: 'Car rental', href: '#' },
+        { text: 'Flight finder', href: '#' },
+        { text: 'Restaurant reservations', href: '#' },
+        { text: 'Travel Agents', href: '#' },
+      ],
+    },
+    {
+      id: 'terms',
+      title: 'Terms & Settings',
+      links: [
+        { text: 'Privacy & cookies', href: '#' },
+        { text: 'Terms & conditions', href: '#' },
+        { text: 'Grievance officer', href: '#' },
+        { text: 'Slavery Statement', href: '#' },
+        { text: 'Human Rights Statement', href: '#' },
+      ],
+    },
+    {
+      id: 'partners',
+      title: 'Partners',
+      links: [
+        { text: 'Extranet login', href: '#' },
+        { text: 'Partner help', href: '#' },
+        { text: 'List your property', href: '#' },
+        { text: 'Become an affiliate', href: '#' },
+      ],
+    },
+    {
+      id: 'about',
+      title: 'About',
+      links: [
+        { text: 'About Booking.com', href: '#' },
+        { text: 'How We Work', href: '#' },
+        { text: 'Sustainability', href: '#' },
+        { text: 'Press center', href: '#' },
+        { text: 'Careers', href: '#' },
+        { text: 'Investor relations', href: '#' },
+        { text: 'Corporate contact', href: '#' },
+      ],
+    },
+  ];
+
   return (
-    <footer className="bg-gray-100 text-gray-700 text-sm mt-12">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Support Column */}
-          <div>
-            <h3 className="font-bold text-gray-900 mb-4">Support</h3>
-            <ul className="space-y-2">
-              <li><Link href="#" className="hover:underline">Coronavirus (COVID-19) FAQs</Link></li>
-              <li><Link href="#" className="hover:underline">Manage your trips</Link></li>
-              <li><Link href="#" className="hover:underline">Contact Customer Service</Link></li>
-              <li><Link href="#" className="hover:underline">Safety Resource Center</Link></li>
-            </ul>
-          </div>
-
-          {/* Discover Column */}
-          <div>
-            <h3 className="font-bold text-gray-900 mb-4">Discover</h3>
-            <ul className="space-y-2">
-              <li><Link href="#" className="hover:underline">Genius loyalty program</Link></li>
-              <li><Link href="#" className="hover:underline">Seasonal and holiday deals</Link></li>
-              <li><Link href="#" className="hover:underline">Travel articles</Link></li>
-              <li><Link href="#" className="hover:underline">Booking.com for Business</Link></li>
-              <li><Link href="#" className="hover:underline">Traveller Review Awards</Link></li>
-              <li><Link href="#" className="hover:underline">Car rental</Link></li>
-              <li><Link href="#" className="hover:underline">Flight finder</Link></li>
-              <li><Link href="#" className="hover:underline">Restaurant reservations</Link></li>
-              <li><Link href="#" className="hover:underline">Booking.com for Travel Agents</Link></li>
-            </ul>
-          </div>
-
-          {/* Terms and settings Column */}
-          <div>
-            <h3 className="font-bold text-gray-800 mb-4">Terms and settings</h3>
-            <ul className="space-y-2">
-              <li><Link href="#" className="hover:underline">Privacy & cookies</Link></li>
-              <li><Link href="#" className="hover:underline">Terms & conditions</Link></li>
-              <li><Link href="#" className="hover:underline">Grievance officer</Link></li>
-              <li><Link href="#" className="hover:underline">Modern Slavery Statement</Link></li>
-              <li><Link href="#" className="hover:underline">Human Rights Statement</Link></li>
-            </ul>
-          </div>
-
-          {/* Partners Column */}
-          <div>
-            <h3 className="font-bold text-gray-800 mb-4">Partners</h3>
-            <ul className="space-y-2">
-              <li><Link href="#" className="hover:underline">Extranet login</Link></li>
-              <li><Link href="#" className="hover:underline">Partner help</Link></li>
-              <li><Link href="#" className="hover:underline">List your property</Link></li>
-              <li><Link href="#" className="hover:underline">Become an affiliate</Link></li>
-            </ul>
-          </div>
-
-          {/* About Column */}
-          <div>
-            <h3 className="font-bold text-gray-800 mb-4">About</h3>
-            <ul className="space-y-2">
-              <li><Link href="#" className="hover:underline">About Booking.com</Link></li>
-              <li><Link href="#" className="hover:underline">How We Work</Link></li>
-              <li><Link href="#" className="hover:underline">Sustainability</Link></li>
-              <li><Link href="#" className="hover:underline">Press center</Link></li>
-              <li><Link href="#" className="hover:underline">Careers</Link></li>
-              <li><Link href="#" className="hover:underline">Investor relations</Link></li>
-              <li><Link href="#" className="hover:underline">Corporate contact</Link></li>
-            </ul>
-          </div>
+    <footer className="bg-gray-100 text-gray-700 text-sm mt-12 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        {/* Mobile view - dropdown sections */}
+        <div className="block sm:hidden space-y-4">
+          {sections.map((section) => (
+            <div key={section.id} className="border-b border-gray-300 pb-2">
+              <button
+                onClick={() => toggleSection(section.id)}
+                className="w-full flex justify-between items-center font-semibold text-gray-900 py-2"
+              >
+                <span>{section.title}</span>
+                {openSection === section.id ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+              {openSection === section.id && (
+                <ul className="space-y-2 pl-4 pb-2">
+                  {section.links.map((link, index) => (
+                    <li key={index}>
+                      <Link href={link.href} className="hover:underline block py-1">
+                        {link.text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
         </div>
 
-        {/* Bottom section */}
-        
+        {/* Desktop view - grid layout */}
+        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+          {sections.map((section) => (
+            <div key={section.id}>
+              <h3 className="font-semibold text-gray-900 mb-4">{section.title}</h3>
+              <ul className="space-y-2">
+                {section.links.map((link, index) => (
+                  <li key={index}>
+                    <Link href={link.href} className="hover:underline">
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-300 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-center text-sm text-gray-600">
+            &copy; {new Date().getFullYear()} Booking.com Clone. All rights reserved.
+          </p>
+
+          {/* Social icons */}
+          <div className="flex gap-4 text-gray-600">
+            <a href="#" aria-label="Facebook" className="hover:text-blue-600">
+              <FaFacebook />
+            </a>
+            <a href="#" aria-label="Twitter" className="hover:text-blue-400">
+              <FaTwitter />
+            </a>
+            <a href="#" aria-label="Instagram" className="hover:text-pink-500">
+              <FaInstagram />
+            </a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-blue-700">
+              <FaLinkedin />
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

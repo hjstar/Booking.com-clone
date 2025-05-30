@@ -3,38 +3,28 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { useBookingStore } from '@/store';
-import type { Hotel } from '@/data/types';
+
 import Asearch from './Search';
 import FinalBooking from './finalBooking';
 import { useParams } from 'next/navigation';
 
 const BookingPage = () => {
   const { id } = useParams();
-  // CORRECTED: Using the actual store properties and methods
   const { booking, setSelectedHotel, hotels } = useBookingStore();
 
   useEffect(() => {
-    // Find the hotel in the store that matches the ID from params
-    const selectedHotel = hotels.find(h => h.id === id);
+    const selectedHotel = hotels.find(h => h.id.toString() === id);
     if (selectedHotel) {
       setSelectedHotel(selectedHotel);
     }
   }, [id, hotels, setSelectedHotel]);
 
   const popularFacilities = [
-    "Airport shuttle",
-    "Fitness centre",
-    "Room service",
-    "Non-smoking rooms",
-    "Restaurant",
-    "Free parking",
-    "Family rooms",
-    "24-hour front desk",
-    "Terrace",
-    "Breakfast"
+    "Airport shuttle", "Fitness centre", "Room service", "Non-smoking rooms",
+    "Restaurant", "Free parking", "Family rooms", "24-hour front desk",
+    "Terrace", "Breakfast"
   ];
 
-  // Access hotel and dates from booking state
   const hotel = booking?.selectedHotel;
   const selectedDates = booking?.bookingDetails?.dateRange;
 
@@ -48,10 +38,10 @@ const BookingPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="p-6 border-b">
-            <div className="flex justify-between items-start mb-6">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-4 mb-6">
               <div>
                 <h1 className="text-3xl font-bold text-blue-800">{hotel.name}</h1>
                 <p className="text-gray-600 mt-2">
@@ -72,7 +62,7 @@ const BookingPage = () => {
             </div>
 
             <div className="flex flex-col lg:flex-row gap-4 mb-6">
-              <div className="lg:w-3/4 h-96 relative">
+              <div className="w-full lg:w-3/4 h-64 sm:h-80 md:h-96 relative">
                 <Image
                   src={hotel.images[0]}
                   alt={`${hotel.name} featured image`}
@@ -83,7 +73,7 @@ const BookingPage = () => {
                 />
               </div>
               
-              <div className="lg:w-1/4 h-96 bg-gray-100 rounded-lg overflow-hidden">
+              <div className="w-full lg:w-1/4 h-64 sm:h-80 md:h-96 bg-gray-100 rounded-lg overflow-hidden">
                 <iframe
                   title="Hotel Location Map"
                   width="100%"
@@ -101,8 +91,8 @@ const BookingPage = () => {
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-8 p-6">
-              <div className="lg:w-2/3">
+            <div className="flex flex-col lg:flex-row gap-8 p-0 sm:p-6">
+              <div className="w-full lg:w-2/3">
                 <h2 className="text-xl font-bold mb-4">About this property</h2>
                 <div className="space-y-4 text-gray-700">
                   <p>{hotel.description}</p>
@@ -110,9 +100,9 @@ const BookingPage = () => {
                 </div>
               </div>
 
-              <div className="lg:w-1/3">
+              <div className="w-full lg:w-1/3 mt-8 lg:mt-0">
                 <h3 className="text-xl font-bold mb-4">Most popular facilities</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {popularFacilities.map((facility, index) => (
                     <div key={index} className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -129,7 +119,7 @@ const BookingPage = () => {
           <div className="p-6">
             <h2 className="text-xl font-bold mb-6">Availability</h2>
             
-            <div className="mb-6 w-[75%]">
+            <div className="mb-6 w-full lg:w-[75%]">
               <Asearch />
             </div>
 
