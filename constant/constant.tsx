@@ -21,7 +21,7 @@ export const navLinks = [
     label: 'Flights',
     icon: (
       <Image 
-        src="/images/flights.svg" 
+        src="/images/Flights.svg" 
         alt="Flights icon" 
         width={20} 
         height={20}
@@ -63,7 +63,7 @@ export const navLinks = [
     label: 'Attractions',
     icon: (
       <Image 
-        src="/images/attractions.svg" 
+        src="/images/Attractions.svg" 
         alt="Attractions icon" 
         width={20} 
         height={20}

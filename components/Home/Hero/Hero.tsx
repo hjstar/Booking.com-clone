@@ -23,7 +23,7 @@ const Hero = () => {
     { name: "Bangalore", country: "India", image: "/images/Banglore.jpg" },
     { name: "Mumbai", country: "India", image: "/images/Mumbai.jpg" },
     { name: "Chennai", country: "India", image: "/images/chennai.jpg" },
-    { name: "Varanasi", country: "India", image: "/images/varanasi.jpg" }
+    { name: "Varanasi", country: "India", image: "/images/Varanasi.jpg" }
   ];
 
   const propertyTypes: PropertyType[] = [
