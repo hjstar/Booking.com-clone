@@ -15,14 +15,14 @@ type Props = {
 const RoomCard = ({ hotel, className = '' }: Props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
-  const { setHotel, setSelectedDates } = useBookingStore();
+  const { setSelectedHotel, setBookingDates } = useBookingStore();
 
   const imageUrl = hotel.images?.[0] || '/default-hotel.jpg';
 
   const handleBookNow = () => {
     try {
-      setHotel(hotel);
-      setSelectedDates({
+      setSelectedHotel(hotel);
+      setBookingDates({
         startDate: new Date(),
         endDate: addDays(new Date(), 3)
       });

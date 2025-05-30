@@ -1,4 +1,3 @@
-// data/data.ts
 import { Hotel, Destination, PropertyType } from "./types";
 
 export const destinations: Destination[] = [
@@ -31,8 +30,7 @@ export const hotels: Hotel[] = [
     rating: 4.8,
     stars: 5,
     amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "Restaurant", "Bar", "Airport Shuttle"],
-    // Only one image path
-    images: ["/images/image1.jpg"], // Assuming /public/images/image1.jpg
+    images: ["/images/image1.jpg"],
     location: {
       city: "Mumbai",
       country: "India",
@@ -66,13 +64,24 @@ export const hotels: Hotel[] = [
         capacity: 2,
         beds: "1 King Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk"],
-        // Only one image path for room
-        images: ["/images/deluxe-1.jpg"], // Changed to a specific room image name
+        images: ["/images/deluxe-1.jpg"],
         available: 5,
         dailyAvailability: [
           { date: "2025-06-01", price: 11500, available: 2 },
           { date: "2025-06-02", price: 12000, available: 3 },
           { date: "2025-06-03", price: 12500, available: 1 },
+          { date: "2025-06-04", price: 12000, available: 2 },
+          { date: "2025-06-05", price: 12000, available: 3 },
+          { date: "2025-06-06", price: 12500, available: 2 },
+          { date: "2025-06-07", price: 13000, available: 1 },
+          { date: "2025-06-08", price: 12000, available: 3 },
+          { date: "2025-06-09", price: 12500, available: 2 },
+          { date: "2025-06-10", price: 12000, available: 1 },
+          { date: "2025-06-11", price: 11500, available: 2 },
+          { date: "2025-06-12", price: 12000, available: 3 },
+          { date: "2025-06-13", price: 12500, available: 1 },
+          { date: "2025-06-14", price: 13000, available: 2 },
+          { date: "2025-06-15", price: 12500, available: 1 },
         ],
       },
       {
@@ -83,13 +92,24 @@ export const hotels: Hotel[] = [
         capacity: 3,
         beds: "1 King Bed + 1 Sofa Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Separate Living Area"],
-        // Only one image path for room
-        images: ["/images/suite-1.jpg"], // Changed to a specific room image name
+        images: ["/images/suite-1.jpg"],
         available: 2,
         dailyAvailability: [
           { date: "2025-06-01", price: 17800, available: 1 },
           { date: "2025-06-02", price: 18500, available: 2 },
           { date: "2025-06-03", price: 18200, available: 0 },
+          { date: "2025-06-04", price: 18000, available: 1 },
+          { date: "2025-06-05", price: 18500, available: 2 },
+          { date: "2025-06-06", price: 18200, available: 1 },
+          { date: "2025-06-07", price: 19000, available: 0 },
+          { date: "2025-06-08", price: 18500, available: 1 },
+          { date: "2025-06-09", price: 18000, available: 2 },
+          { date: "2025-06-10", price: 18500, available: 1 },
+          { date: "2025-06-11", price: 18200, available: 0 },
+          { date: "2025-06-12", price: 18500, available: 1 },
+          { date: "2025-06-13", price: 19000, available: 2 },
+          { date: "2025-06-14", price: 18500, available: 1 },
+          { date: "2025-06-15", price: 18000, available: 0 },
         ],
       },
     ],
@@ -108,8 +128,7 @@ export const hotels: Hotel[] = [
     rating: 4.9,
     stars: 5,
     amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "4 Restaurants", "Bar", "Concierge Service"],
-    // Only one image path
-    images: ["/images/image2.jpg"], // Assuming /public/images/image2.jpg
+    images: ["/images/image2.jpg"],
     location: {
       city: "New Delhi",
       country: "India",
@@ -135,13 +154,24 @@ export const hotels: Hotel[] = [
         capacity: 2,
         beds: "1 King Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Bathrobe"],
-        // Only one image path for room
-        images: ["/images/luxury-1.jpg"], // Changed to a specific room image name
+        images: ["/images/luxury-1.jpg"],
         available: 7,
         dailyAvailability: [
           { date: "2025-06-01", price: 14500, available: 3 },
           { date: "2025-06-02", price: 15000, available: 4 },
           { date: "2025-06-03", price: 15500, available: 2 },
+          { date: "2025-06-04", price: 15000, available: 3 },
+          { date: "2025-06-05", price: 14500, available: 4 },
+          { date: "2025-06-06", price: 15000, available: 3 },
+          { date: "2025-06-07", price: 15500, available: 2 },
+          { date: "2025-06-08", price: 15000, available: 4 },
+          { date: "2025-06-09", price: 14500, available: 3 },
+          { date: "2025-06-10", price: 15000, available: 2 },
+          { date: "2025-06-11", price: 15500, available: 1 },
+          { date: "2025-06-12", price: 15000, available: 3 },
+          { date: "2025-06-13", price: 14500, available: 2 },
+          { date: "2025-06-14", price: 15000, available: 1 },
+          { date: "2025-06-15", price: 15500, available: 0 },
         ],
       },
     ],
@@ -160,8 +190,7 @@ export const hotels: Hotel[] = [
     rating: 4.7,
     stars: 5,
     amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "3 Restaurants", "Bar", "Valet Parking"],
-    // Only one image path
-    images: ["/images/image3.jpg"], // Assuming /public/images/image3.jpg
+    images: ["/images/image3.jpg"],
     location: {
       city: "Bangalore",
       country: "India",
@@ -187,13 +216,24 @@ export const hotels: Hotel[] = [
         capacity: 2,
         beds: "1 King Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Luxury Toiletries"],
-        // Only one image path for room
-        images: ["/images/premier-1.jpg"], // Changed to a specific room image name
+        images: ["/images/premier-1.jpg"],
         available: 6,
         dailyAvailability: [
           { date: "2025-06-01", price: 9800, available: 4 },
           { date: "2025-06-02", price: 10200, available: 3 },
           { date: "2025-06-03", price: 10500, available: 2 },
+          { date: "2025-06-04", price: 10000, available: 4 },
+          { date: "2025-06-05", price: 9800, available: 3 },
+          { date: "2025-06-06", price: 10200, available: 2 },
+          { date: "2025-06-07", price: 10500, available: 1 },
+          { date: "2025-06-08", price: 10000, available: 3 },
+          { date: "2025-06-09", price: 9800, available: 2 },
+          { date: "2025-06-10", price: 10200, available: 1 },
+          { date: "2025-06-11", price: 10500, available: 0 },
+          { date: "2025-06-12", price: 10000, available: 2 },
+          { date: "2025-06-13", price: 9800, available: 1 },
+          { date: "2025-06-14", price: 10200, available: 0 },
+          { date: "2025-06-15", price: 10500, available: 0 },
         ],
       },
     ],
@@ -212,8 +252,7 @@ export const hotels: Hotel[] = [
     rating: 4.6,
     stars: 5,
     amenities: ["Free WiFi", "Outdoor Pool", "Spa", "Fitness Center", "Nightclub", "Beach Access", "Yoga Classes"],
-    // Only one image path
-    images: ["/images/image4.jpg"], // Assuming /public/images/image4.jpg
+    images: ["/images/image4.jpg"],
     location: {
       city: "Goa",
       country: "India",
@@ -239,13 +278,24 @@ export const hotels: Hotel[] = [
         capacity: 2,
         beds: "1 King Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Balcony"],
-        // Only one image path for room
-        images: ["/images/wonderful-1.jpg"], // Changed to a specific room image name
+        images: ["/images/wonderful-1.jpg"],
         available: 4,
         dailyAvailability: [
           { date: "2025-06-01", price: 17500, available: 2 },
           { date: "2025-06-02", price: 18000, available: 3 },
           { date: "2025-06-03", price: 19000, available: 1 },
+          { date: "2025-06-04", price: 18000, available: 2 },
+          { date: "2025-06-05", price: 17500, available: 3 },
+          { date: "2025-06-06", price: 18000, available: 2 },
+          { date: "2025-06-07", price: 19000, available: 1 },
+          { date: "2025-06-08", price: 18000, available: 3 },
+          { date: "2025-06-09", price: 17500, available: 2 },
+          { date: "2025-06-10", price: 18000, available: 1 },
+          { date: "2025-06-11", price: 19000, available: 0 },
+          { date: "2025-06-12", price: 18000, available: 2 },
+          { date: "2025-06-13", price: 17500, available: 1 },
+          { date: "2025-06-14", price: 18000, available: 0 },
+          { date: "2025-06-15", price: 19000, available: 0 },
         ],
       },
     ],
@@ -264,8 +314,7 @@ export const hotels: Hotel[] = [
     rating: 4.9,
     stars: 5,
     amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "Dining", "Private Gardens", "Camel Rides"],
-    // Only one image path
-    images: ["/images/image5.jpg"], // Assuming /public/images/image5.jpg
+    images: ["/images/image5.jpg"],
     location: {
       city: "Jaipur",
       country: "India",
@@ -291,13 +340,24 @@ export const hotels: Hotel[] = [
         capacity: 2,
         beds: "1 King Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Private Patio"],
-        // Only one image path for room
-        images: ["/images/tent-1.jpg"], // Changed to a specific room image name
+        images: ["/images/tent-1.jpg"],
         available: 3,
         dailyAvailability: [
           { date: "2025-06-01", price: 24500, available: 1 },
           { date: "2025-06-02", price: 25000, available: 2 },
           { date: "2025-06-03", price: 26000, available: 0 },
+          { date: "2025-06-04", price: 25000, available: 1 },
+          { date: "2025-06-05", price: 24500, available: 2 },
+          { date: "2025-06-06", price: 25000, available: 1 },
+          { date: "2025-06-07", price: 26000, available: 0 },
+          { date: "2025-06-08", price: 25000, available: 1 },
+          { date: "2025-06-09", price: 24500, available: 2 },
+          { date: "2025-06-10", price: 25000, available: 1 },
+          { date: "2025-06-11", price: 26000, available: 0 },
+          { date: "2025-06-12", price: 25000, available: 1 },
+          { date: "2025-06-13", price: 24500, available: 0 },
+          { date: "2025-06-14", price: 25000, available: 0 },
+          { date: "2025-06-15", price: 26000, available: 0 },
         ],
       },
     ],
@@ -316,8 +376,7 @@ export const hotels: Hotel[] = [
     rating: 4.7,
     stars: 5,
     amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "5 Restaurants", "Bar", "Business Center"],
-    // Only one image path
-    images: ["/images/image6.jpg"], // Assuming /public/images/image6.jpg
+    images: ["/images/image6.jpg"],
     location: {
       city: "Chennai",
       country: "India",
@@ -343,13 +402,24 @@ export const hotels: Hotel[] = [
         capacity: 2,
         beds: "1 King Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Club Lounge Access"],
-        // Only one image path for room
-        images: ["/images/executive-1.jpg"], // Changed to a specific room image name
+        images: ["/images/executive-1.jpg"],
         available: 5,
         dailyAvailability: [
           { date: "2025-06-01", price: 10800, available: 3 },
           { date: "2025-06-02", price: 11200, available: 2 },
           { date: "2025-06-03", price: 11500, available: 1 },
+          { date: "2025-06-04", price: 11000, available: 3 },
+          { date: "2025-06-05", price: 10800, available: 2 },
+          { date: "2025-06-06", price: 11200, available: 1 },
+          { date: "2025-06-07", price: 11500, available: 0 },
+          { date: "2025-06-08", price: 11000, available: 2 },
+          { date: "2025-06-09", price: 10800, available: 1 },
+          { date: "2025-06-10", price: 11200, available: 0 },
+          { date: "2025-06-11", price: 11500, available: 0 },
+          { date: "2025-06-12", price: 11000, available: 1 },
+          { date: "2025-06-13", price: 10800, available: 0 },
+          { date: "2025-06-14", price: 11200, available: 0 },
+          { date: "2025-06-15", price: 11500, available: 0 },
         ],
       },
     ],
@@ -368,8 +438,7 @@ export const hotels: Hotel[] = [
     rating: 4.9,
     stars: 5,
     amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "Fine Dining", "Library", "Horse Carriage Rides"],
-    // Only one image path
-    images: ["/images/image7.jpg"], // Assuming /public/images/image7.jpg
+    images: ["/images/image7.jpg"],
     location: {
       city: "Hyderabad",
       country: "India",
@@ -395,13 +464,24 @@ export const hotels: Hotel[] = [
         capacity: 3,
         beds: "1 King Bed + 1 Single Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Study", "Marble Bathroom", "Butler Service"],
-        // Only one image path for room
-        images: ["/images/royal-1.jpg"], // Changed to a specific room image name
+        images: ["/images/royal-1.jpg"],
         available: 2,
         dailyAvailability: [
           { date: "2025-06-01", price: 34000, available: 1 },
           { date: "2025-06-02", price: 35000, available: 1 },
           { date: "2025-06-03", price: 36000, available: 0 },
+          { date: "2025-06-04", price: 35000, available: 1 },
+          { date: "2025-06-05", price: 34000, available: 1 },
+          { date: "2025-06-06", price: 35000, available: 0 },
+          { date: "2025-06-07", price: 36000, available: 0 },
+          { date: "2025-06-08", price: 35000, available: 1 },
+          { date: "2025-06-09", price: 34000, available: 1 },
+          { date: "2025-06-10", price: 35000, available: 0 },
+          { date: "2025-06-11", price: 36000, available: 0 },
+          { date: "2025-06-12", price: 35000, available: 1 },
+          { date: "2025-06-13", price: 34000, available: 0 },
+          { date: "2025-06-14", price: 35000, available: 0 },
+          { date: "2025-06-15", price: 36000, available: 0 },
         ],
       },
     ],
@@ -420,8 +500,7 @@ export const hotels: Hotel[] = [
     rating: 4.6,
     stars: 5,
     amenities: ["Free WiFi", "Swimming Pool", "Spa", "Fitness Center", "3 Restaurants", "Bar", "Concierge"],
-    // Only one image path
-    images: ["/images/image8.jpg"], // Assuming /public/images/image8.jpg
+    images: ["/images/image8.jpg"],
     location: {
       city: "Kolkata",
       country: "India",
@@ -447,13 +526,24 @@ export const hotels: Hotel[] = [
         capacity: 2,
         beds: "1 King Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Tea/Coffee Maker"],
-        // Only one image path for room
-        images: ["/images/deluxekol-1.jpg"], // Changed to a specific room image name
+        images: ["/images/deluxekol-1.jpg"],
         available: 6,
         dailyAvailability: [
           { date: "2025-06-01", price: 9200, available: 4 },
           { date: "2025-06-02", price: 9500, available: 3 },
           { date: "2025-06-03", price: 9800, available: 2 },
+          { date: "2025-06-04", price: 9500, available: 4 },
+          { date: "2025-06-05", price: 9200, available: 3 },
+          { date: "2025-06-06", price: 9500, available: 2 },
+          { date: "2025-06-07", price: 9800, available: 1 },
+          { date: "2025-06-08", price: 9500, available: 3 },
+          { date: "2025-06-09", price: 9200, available: 2 },
+          { date: "2025-06-10", price: 9500, available: 1 },
+          { date: "2025-06-11", price: 9800, available: 0 },
+          { date: "2025-06-12", price: 9500, available: 2 },
+          { date: "2025-06-13", price: 9200, available: 1 },
+          { date: "2025-06-14", price: 9500, available: 0 },
+          { date: "2025-06-15", price: 9800, available: 0 },
         ],
       },
     ],
@@ -472,8 +562,7 @@ export const hotels: Hotel[] = [
     rating: 4.9,
     stars: 5,
     amenities: ["Free WiFi", "Swimming Pool", "Spa", "Boat Transfer", "Fine Dining", "Cultural Performances"],
-    // Only one image path
-    images: ["/images/image9.jpg"], // Assuming /public/images/image9.jpg
+    images: ["/images/image9.jpg"],
     location: {
       city: "Udaipur",
       country: "India",
@@ -499,13 +588,24 @@ export const hotels: Hotel[] = [
         capacity: 2,
         beds: "1 King Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Work Desk", "Marble Bathroom"],
-        // Only one image path for room
-        images: ["/images/lakeview-1.jpg"], // Changed to a specific room image name
+        images: ["/images/lakeview-1.jpg"],
         available: 4,
         dailyAvailability: [
           { date: "2025-06-01", price: 29000, available: 2 },
           { date: "2025-06-02", price: 30000, available: 1 },
           { date: "2025-06-03", price: 31000, available: 1 },
+          { date: "2025-06-04", price: 30000, available: 2 },
+          { date: "2025-06-05", price: 29000, available: 1 },
+          { date: "2025-06-06", price: 30000, available: 1 },
+          { date: "2025-06-07", price: 31000, available: 0 },
+          { date: "2025-06-08", price: 30000, available: 1 },
+          { date: "2025-06-09", price: 29000, available: 1 },
+          { date: "2025-06-10", price: 30000, available: 0 },
+          { date: "2025-06-11", price: 31000, available: 0 },
+          { date: "2025-06-12", price: 30000, available: 1 },
+          { date: "2025-06-13", price: 29000, available: 0 },
+          { date: "2025-06-14", price: 30000, available: 0 },
+          { date: "2025-06-15", price: 31000, available: 0 },
         ],
       },
     ],
@@ -524,8 +624,7 @@ export const hotels: Hotel[] = [
     rating: 4.8,
     stars: 5,
     amenities: ["Free WiFi", "Infinity Pool", "Spa", "Private Beach", "3 Restaurants", "Ayurvedic Center"],
-    // Only one image path
-    images: ["/images/image10.jpg"], // Assuming /public/images/image10.jpg
+    images: ["/images/image10.jpg"],
     location: {
       city: "Kovalam",
       country: "India",
@@ -551,13 +650,24 @@ export const hotels: Hotel[] = [
         capacity: 2,
         beds: "1 King Bed",
         amenities: ["Air Conditioning", "TV", "Minibar", "Safe", "Balcony", "Ocean View"],
-        // Only one image path for room
-        images: ["/images/seaview-1.jpg"], // Changed to a specific room image name
+        images: ["/images/seaview-1.jpg"],
         available: 5,
         dailyAvailability: [
           { date: "2025-06-01", price: 21000, available: 3 },
           { date: "2025-06-02", price: 22000, available: 2 },
           { date: "2025-06-03", price: 23000, available: 1 },
+          { date: "2025-06-04", price: 22000, available: 3 },
+          { date: "2025-06-05", price: 21000, available: 2 },
+          { date: "2025-06-06", price: 22000, available: 1 },
+          { date: "2025-06-07", price: 23000, available: 0 },
+          { date: "2025-06-08", price: 22000, available: 2 },
+          { date: "2025-06-09", price: 21000, available: 1 },
+          { date: "2025-06-10", price: 22000, available: 0 },
+          { date: "2025-06-11", price: 23000, available: 0 },
+          { date: "2025-06-12", price: 22000, available: 1 },
+          { date: "2025-06-13", price: 21000, available: 0 },
+          { date: "2025-06-14", price: 22000, available: 0 },
+          { date: "2025-06-15", price: 23000, available: 0 },
         ],
       },
     ],

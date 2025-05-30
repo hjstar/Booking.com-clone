@@ -3,22 +3,23 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { useBookingStore } from '@/store';
-import type {Hotel} from '@/data/types';
+import type { Hotel } from '@/data/types';
 import Asearch from './Search';
 import FinalBooking from './finalBooking';
 import { useParams } from 'next/navigation';
 
 const BookingPage = () => {
   const { id } = useParams();
-  const { hotel, selectedDates, setHotel, hotels } = useBookingStore();
+  // CORRECTED: Using the actual store properties and methods
+  const { booking, setSelectedHotel, hotels } = useBookingStore();
 
   useEffect(() => {
     // Find the hotel in the store that matches the ID from params
     const selectedHotel = hotels.find(h => h.id === id);
     if (selectedHotel) {
-      setHotel(selectedHotel);
+      setSelectedHotel(selectedHotel);
     }
-  }, [id, hotels, setHotel]);
+  }, [id, hotels, setSelectedHotel]);
 
   const popularFacilities = [
     "Airport shuttle",
@@ -32,6 +33,10 @@ const BookingPage = () => {
     "Terrace",
     "Breakfast"
   ];
+
+  // Access hotel and dates from booking state
+  const hotel = booking?.selectedHotel;
+  const selectedDates = booking?.bookingDetails?.dateRange;
 
   if (!hotel || !selectedDates) {
     return (

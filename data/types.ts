@@ -73,4 +73,3 @@ export type RoomCardProps = {
   location: string;
   pricePerNight: number;
 };
-
