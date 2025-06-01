@@ -84,7 +84,7 @@ const Nav = () => {
               <span>INR</span>
             </button>
             <button className="hover:bg-[#1a4fa0] px-3 py-2 rounded-md transition-colors flex items-center" title="Change country">
-              <Image src="/images/india.svg" alt="country" width={24} height={24} className="filter invert brightness-200" />
+              <Image src="/images/india.svg" alt="country" width={24} height={24}  />
             </button>
             <Link href="/help" className="hover:bg-[#1a4fa0] px-3 py-2 rounded-md transition-colors flex items-center">
               <Image src="/images/qna.svg" alt="qna" width={24} height={24} className="filter invert brightness-200" />
